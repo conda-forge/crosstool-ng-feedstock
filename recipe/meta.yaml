@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/continuumio/crosstool-ng/archive/{{ version.split("_")[-1][1:] }}.tar.gz
-  sha256: 515485a94bbdff75e81036c8789b9fe8f5e9801aa9ab3e00395ebfc63cccae46
+  git_url: https://github.com/continuumio/crosstool-ng.git
+  git_tag: {{ version.split("_")[-1][1:] }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
   missing_dso_whitelist:
     - '*'
