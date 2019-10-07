@@ -15,6 +15,17 @@ unset LIBTOOLIZE
 unset OBJCOPY
 unset OBJDUMP
 unset READELF
+export BASH="/usr/bin/env bash"
+export AWK="/usr/bin/env gawk"
+export GREP="/usr/bin/env grep"
+export MAKE="/usr/bin/make"
+export SED="/usr/bin/env sed"
+export OBJCOPY="/usr/bin/env objcopy"
+export OBJDUMP="/usr/bin/env objdump"
+export READELF="/usr/bin/env readelf"
+export PATCH="/usr/bin/env patch"
+export GPERF="/usr/bin/env gperf"
+
 export CPPFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -Wl,-rpath-link,${PREFIX}/lib"
 if [[ $(uname) == Darwin ]]; then
   export DYLD_FALLBACK_LIBRARY_PATH=${PREFIX}/lib
@@ -23,4 +34,3 @@ fi
 ./configure --prefix=${PREFIX}
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make install
-
