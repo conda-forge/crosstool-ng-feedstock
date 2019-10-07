@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/continuumio/crosstool-ng/archive/crosstool-ng-{{ version.split("_")[-1] }}.tar.gz
+  url: https://github.com/continuumio/crosstool-ng/archive/{{ version.split("_")[-1] }}.tar.gz
   sha256: 515485a94bbdff75e81036c8789b9fe8f5e9801aa9ab3e00395ebfc63cccae46
 
 build:
