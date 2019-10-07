@@ -9,7 +9,7 @@ source:
   git_tag: {{ version.split("_")[-1][1:] }}
 
 build:
-  number: 1
+  number: 2
   skip: True  # [not linux]
   missing_dso_whitelist:
     - '*'
@@ -30,6 +30,7 @@ requirements:
     - texinfo
     - unzip
     - wget
+    - bash
   host:
     - ncurses
     - libtool
