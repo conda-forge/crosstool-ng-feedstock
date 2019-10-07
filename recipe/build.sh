@@ -25,7 +25,7 @@ export OBJDUMP="/usr/bin/env objdump"
 export READELF="/usr/bin/env readelf"
 export PATCH="/usr/bin/env patch"
 export GPERF="/usr/bin/env gperf"
-
+export DEBUG=1
 export CPPFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -Wl,-rpath-link,${PREFIX}/lib"
 if [[ $(uname) == Darwin ]]; then
   export DYLD_FALLBACK_LIBRARY_PATH=${PREFIX}/lib
