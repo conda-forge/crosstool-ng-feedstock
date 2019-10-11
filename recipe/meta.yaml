@@ -40,6 +40,7 @@ requirements:
 test:
   commands:
     - ct-ng -h
+    - test -f $PREFIX/share/crosstool-ng/config/versions/linux.in
 
 about:
   home: http://crosstool-ng.org/
