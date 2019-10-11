@@ -9,7 +9,7 @@ source:
   git_tag: {{ version.split("_")[-1][1:] }}
 
 build:
-  number: 1
+  number: 2
   skip: True  # [not linux]
   missing_dso_whitelist:
     - '*'
@@ -40,6 +40,7 @@ requirements:
 test:
   commands:
     - ct-ng -h
+    - test -f $PREFIX/share/crosstool-ng/config/versions/linux.in
 
 about:
   home: http://crosstool-ng.org/
