@@ -25,6 +25,7 @@ export OBJDUMP="/usr/bin/env objdump"
 export READELF="/usr/bin/env readelf"
 export PATCH="/usr/bin/env patch"
 export GPERF="/usr/bin/env gperf"
+unset ncurses
 
 export CPPFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -Wl,-rpath-link,${PREFIX}/lib"
 if [[ $(uname) == Darwin ]]; then
