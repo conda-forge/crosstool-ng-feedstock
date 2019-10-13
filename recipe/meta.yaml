@@ -7,9 +7,11 @@ package:
 source:
   git_url: https://github.com/continuumio/crosstool-ng.git
   git_tag: {{ version.split("_")[-1][1:] }}
+  patches:
+    - verbosity.patch
 
 build:
-  number: 2
+  number: 3
   skip: True  # [not linux]
   missing_dso_whitelist:
     - '*'
