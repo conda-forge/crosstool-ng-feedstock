@@ -1,0 +1,24 @@
+From f6a65bf80ea0e177791a42ccaef4edb88c1ae478 Mon Sep 17 00:00:00 2001
+From: Isuru Fernando <isuruf@gmail.com>
+Date: Sun, 13 Oct 2019 13:14:00 -0500
+Subject: [PATCH] Reduce verbosity
+
+---
+ scripts/functions | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/scripts/functions b/scripts/functions
+index 2267a957c..be87d88b9 100644
+--- a/scripts/functions
++++ b/scripts/functions
+@@ -301,7 +301,9 @@ CT_DoLog() {
+                       printf "${CT_LOG_PROGRESS_BAR:+\r}[%-5s]%*s%s%s\n" "${cur_L}" "${indent}" " " "${line}" >&6
+                   fi
+                   if [ "${CT_LOG_PROGRESS_BAR}" = "y" ]; then
+-                      printf "\r[%02d:%02d] %s " $((SECONDS/60)) $((SECONDS%60)) "${_prog_bar[$((_prog_bar_cpt/10))]}" >&6
++		      if [ "$_prog_bar_cpt" -lt "4" ]; then
++                          printf "\r[%02d:%02d] %s " $((SECONDS/60)) $((SECONDS%60)) "${_prog_bar[$((_prog_bar_cpt/10))]}" >&6
++		      fi
+                       _prog_bar_cpt=$(((_prog_bar_cpt+1)%40))
+                   fi
+               elif [ ${cur_l} -le ${CT_LOG_LEVEL_WARN} ]; then

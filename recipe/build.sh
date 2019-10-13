@@ -32,6 +32,6 @@ if [[ $(uname) == Darwin ]]; then
   export DYLD_FALLBACK_LIBRARY_PATH=${PREFIX}/lib
 fi
 ./bootstrap
-./configure --prefix=${PREFIX}
+./configure --prefix=${PREFIX} || (cat config.log && exit 1)
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make install
