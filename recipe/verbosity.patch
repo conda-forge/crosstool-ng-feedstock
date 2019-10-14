@@ -16,9 +16,9 @@ index 2267a957c..be87d88b9 100644
                    fi
                    if [ "${CT_LOG_PROGRESS_BAR}" = "y" ]; then
 -                      printf "\r[%02d:%02d] %s " $((SECONDS/60)) $((SECONDS%60)) "${_prog_bar[$((_prog_bar_cpt/10))]}" >&6
-+		      if [ "$_prog_bar_cpt" -lt "4" ]; then
++		               if [ "$(((_prog_bar_cpt+1)%10))" -eq "0" ]; then
 +                          printf "\r[%02d:%02d] %s " $((SECONDS/60)) $((SECONDS%60)) "${_prog_bar[$((_prog_bar_cpt/10))]}" >&6
-+		      fi
++		               fi
                        _prog_bar_cpt=$(((_prog_bar_cpt+1)%40))
                    fi
                elif [ ${cur_l} -le ${CT_LOG_LEVEL_WARN} ]; then

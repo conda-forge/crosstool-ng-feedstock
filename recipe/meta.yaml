@@ -1,4 +1,4 @@
-{% set version = "1.23.0.452_gd1585345" %}
+{% set version = "1.23.0.449_ga04d081" %}
 
 package:
   name: crosstool-ng
@@ -11,7 +11,7 @@ source:
     - verbosity.patch
 
 build:
-  number: 3
+  number: 4
   skip: True  # [not linux]
   missing_dso_whitelist:
     - '*'
@@ -20,7 +20,6 @@ requirements:
   build:
     # TODO We need some [not bootstrapping] selector or something?
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - autoconf
     - automake
     - texinfo
