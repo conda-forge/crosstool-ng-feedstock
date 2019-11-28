@@ -1,11 +1,11 @@
-{% set version = "1.24.0.37_g3f461da1" %}
+{% set version = "1.24.0.39_gde1ec7f7" %}
 
 package:
   name: crosstool-ng
   version: {{ version }}
 
 source:
-  git_url: https://github.com/crosstool-ng/crosstool-ng.git
+  git_url: https://github.com/isuruf/crosstool-ng.git
   git_tag: {{ version.split("_")[-1][1:] }}
 
 build:
