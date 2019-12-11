@@ -1,4 +1,4 @@
-{% set version = "1.23.0.449_ga04d081" %}
+{% set version = "1.24.0" %}
 
 package:
   name: crosstool-ng
@@ -11,7 +11,7 @@ source:
     - verbosity.patch
 
 build:
-  number: 4
+  number: 0
   skip: True  # [not linux]
   missing_dso_whitelist:
     - '*'
