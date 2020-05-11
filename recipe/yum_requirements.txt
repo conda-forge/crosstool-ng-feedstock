@@ -1,1 +1,5 @@
 make
+file
+sed
+rsync
+findutils
