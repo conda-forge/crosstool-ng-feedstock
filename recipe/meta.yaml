@@ -1,17 +1,17 @@
-{% set version = "1.23.0.449_ga04d081" %}
+{% set version = "1.24.0.121_g864ba1fb" %}
 
 package:
   name: crosstool-ng
   version: {{ version }}
 
 source:
-  git_url: https://github.com/continuumio/crosstool-ng.git
+  git_url: https://github.com/conda-forge/crosstool-ng.git
   git_tag: {{ version.split("_")[-1][1:] }}
   patches:
     - verbosity.patch
 
 build:
-  number: 4
+  number: 0
   skip: True  # [not linux]
   missing_dso_whitelist:
     - '*'
@@ -48,7 +48,7 @@ test:
 
 about:
   home: http://crosstool-ng.org/
-  license: GPL-2.0
+  license: GPL-2.0-or-later
   license_file:
     - COPYING
     - licenses.d/gpl.txt
