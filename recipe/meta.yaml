@@ -1,4 +1,4 @@
-{% set version = "1.24.0.125_g9a220d25" %}
+{% set version = "1.24.0.126.gccbb0fb2" %}
 
 package:
   name: crosstool-ng
