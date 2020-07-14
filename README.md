@@ -5,7 +5,7 @@ Home: http://crosstool-ng.org/
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A versatile (cross-)toolchain generator.
 
