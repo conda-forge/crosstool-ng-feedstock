@@ -1,0 +1,106 @@
+diff --git a/samples/s390-ibm-linux-gnu/crosstool.config b/samples/s390-ibm-linux-gnu/crosstool.config
+index bf6fbe0..06fb9f6 100644
+--- a/samples/s390-ibm-linux-gnu/crosstool.config
++++ b/samples/s390-ibm-linux-gnu/crosstool.config
+@@ -1,6 +1,7 @@
+ CT_CONFIG_VERSION="3"
+ CT_EXPERIMENTAL=y
+ CT_ARCH_S390=y
++CT_TARGET_VENDOR="ibm"
+ CT_KERNEL_LINUX=y
+ CT_BINUTILS_PLUGINS=y
+ CT_CC_LANG_CXX=y
+diff --git a/samples/s390-unknown-linux-gnu/crosstool.config b/samples/s390-unknown-linux-gnu/crosstool.config
+new file mode 100644
+index 0000000..bf6fbe0
+--- /dev/null
++++ b/samples/s390-unknown-linux-gnu/crosstool.config
+@@ -0,0 +1,6 @@
++CT_CONFIG_VERSION="3"
++CT_EXPERIMENTAL=y
++CT_ARCH_S390=y
++CT_KERNEL_LINUX=y
++CT_BINUTILS_PLUGINS=y
++CT_CC_LANG_CXX=y
+diff --git a/samples/s390-unknown-linux-gnu/reported.by b/samples/s390-unknown-linux-gnu/reported.by
+new file mode 100644
+index 0000000..6fb7272
+--- /dev/null
++++ b/samples/s390-unknown-linux-gnu/reported.by
+@@ -0,0 +1,3 @@
++reporter_name="Pradipta Ghosh"
++reporter_url="https://github.com/pradghos/crosstool-ng"
++reporter_comment="reference samples s390-ibm-linux-gnu"
+diff --git a/samples/s390x-ibm-linux-gnu/crosstool.config b/samples/s390x-ibm-linux-gnu/crosstool.config
+index 55b1622..8b4bb08 100644
+--- a/samples/s390x-ibm-linux-gnu/crosstool.config
++++ b/samples/s390x-ibm-linux-gnu/crosstool.config
+@@ -1,6 +1,7 @@
+ CT_CONFIG_VERSION="3"
+ CT_ARCH_S390=y
+ CT_ARCH_64=y
++CT_TARGET_VENDOR="ibm"
+ CT_KERNEL_LINUX=y
+ CT_BINUTILS_PLUGINS=y
+ CT_CC_LANG_CXX=y
+diff --git a/samples/s390x-unknown-linux-gnu/crosstool.config b/samples/s390x-unknown-linux-gnu/crosstool.config
+new file mode 100644
+index 0000000..55b1622
+--- /dev/null
++++ b/samples/s390x-unknown-linux-gnu/crosstool.config
+@@ -0,0 +1,6 @@
++CT_CONFIG_VERSION="3"
++CT_ARCH_S390=y
++CT_ARCH_64=y
++CT_KERNEL_LINUX=y
++CT_BINUTILS_PLUGINS=y
++CT_CC_LANG_CXX=y
+diff --git a/samples/s390x-unknown-linux-gnu/reported.by b/samples/s390x-unknown-linux-gnu/reported.by
+new file mode 100644
+index 0000000..7ac1e07
+--- /dev/null
++++ b/samples/s390x-unknown-linux-gnu/reported.by
+@@ -0,0 +1,3 @@
++reporter_name="Pradipta Ghosh"
++reporter_url="https://github.com/pradghos/crosstool-ng"
++reporter_comment="reference samples s390x-ibm-linux-gnu"
+diff --git a/scripts/config.guess b/scripts/config.guess
+index a81aa50..183eb2a 100755
+--- a/scripts/config.guess
++++ b/scripts/config.guess
+@@ -1041,7 +1041,7 @@ EOF
+ 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
+ 	exit ;;
+     s390:Linux:*:* | s390x:Linux:*:*)
+-	echo "$UNAME_MACHINE"-ibm-linux-"$LIBC"
++	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
+ 	exit ;;
+     sh64*:Linux:*:*)
+ 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
+diff --git a/scripts/config.sub b/scripts/config.sub
+index 3b4c762..36df2c8 100755
+--- a/scripts/config.sub
++++ b/scripts/config.sub
+@@ -1139,14 +1139,6 @@ case $cpu-$vendor in
+ 		cpu=nsx
+ 		vendor=tandem
+ 		;;
+-	s390-*)
+-		cpu=s390
+-		vendor=ibm
+-		;;
+-	s390x-*)
+-		cpu=s390x
+-		vendor=ibm
+-		;;
+ 	tile*-*)
+ 		os=${os:-linux-gnu}
+ 		;;
+@@ -1238,6 +1230,7 @@ case $cpu-$vendor in
+ 			| sparclite \
+ 			| sparcv8 | sparcv9 | sparcv9b | sparcv9v | sv1 | sx* \
+ 			| spu \
++			| s390 | s390x \
+ 			| tahoe \
+ 			| tic30 | tic4x | tic54x | tic55x | tic6x | tic80 \
+ 			| tron \
