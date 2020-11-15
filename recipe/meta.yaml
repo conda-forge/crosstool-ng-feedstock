@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     # TODO We need some [not bootstrapping] selector or something?
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - autoconf
     - automake
